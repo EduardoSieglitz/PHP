@@ -18,16 +18,16 @@
             </fieldset>
         </div>
         <?php 
-    $Conn = new PDO("mysql:host=localhost;dbname=cadastroproduto;port=3306", "root", "");
-    $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-    var_dump($dados);
-    if(isset($_POST["bt"])){
-        $sql = "INSERT INTO tb_cadastroproduto (Nome, preco, Quantidade) VALUES (:nome, :preco, :quantidade);";
-        $add = $Conn->prepare($sql);
-        $add->bindParam(':nome', $dados['Nome']);
-        $add->bindParam(':preco', $dados['Preco']);
-        $add->bindParam(':quantidade', $dados['Quantidade']);
-        $add->execute();
+        $Conn = new PDO("mysql:host=localhost;dbname=cadastroproduto;port=3306", "root", "");
+        $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        var_dump($dados);
+        if(isset($_POST["bt"])){
+            $sql = "INSERT INTO tb_cadastroproduto (Nome, preco, Quantidade) VALUES (:nome, :preco, :quantidade);";
+            $add = $Conn->prepare($sql);
+            $add->bindParam(':nome', $dados['Nome']);
+            $add->bindParam(':preco', $dados['Preco']);
+            $add->bindParam(':quantidade', $dados['Quantidade']);
+            $add->execute();
     }
 ?>
 
