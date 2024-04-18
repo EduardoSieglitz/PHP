@@ -5,6 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastro</title>
     </head>
+    <style>
+    .codigo{
+        width: 230px;
+    }
+    .quantidade{
+        width: 180px;
+    }
+
+</style>
     <body>
         <div class="CadastroProduto">
             <fieldset>
@@ -12,8 +21,8 @@
                 <form action="CadastrarProduto.php" method="post">
                     <input type="text" name="Nome" placeholder="Digite nome do produto">
                     <input type="text" name="Preco" placeholder="Digite preço do produto">
-                    <input type="text" name="Quantidade" placeholder="Digite quantidade do produto">
-                    <input type="text" name="Codigo" placeholder="Digite codigo do produto, 6 caracteres">
+                    <input class="quantidade" type="text" name="Quantidade" placeholder="Digite quantidade do produto">
+                    <input class="codigo" type="text" name="Codigo" placeholder="Digite codigo do produto, 6 caracteres">
                     <button type="submit" name="bt">Cadastrar</button>
                 </form>
                 <a href="Alterar.php">Alterar cadastro?</a>
