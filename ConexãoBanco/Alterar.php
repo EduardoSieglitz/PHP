@@ -19,6 +19,7 @@
                     </select>
                     <button type="submit" name="bt">Alterar</button>
                 </form>
+                <a href="Delete.php">Deletar cadastro?</a>
                 <a href="CadastrarProduto.php">Cadastrar produto?</a>
             </fieldset>
         </div>

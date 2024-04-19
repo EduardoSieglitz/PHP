@@ -26,6 +26,7 @@
                     <button type="submit" name="bt">Cadastrar</button>
                 </form>
                 <a href="Alterar.php">Alterar cadastro?</a>
+                <a href="Delete.php">Deletar cadastro?</a>
             </fieldset>
         </div>
         <?php 
