@@ -1,0 +1,18 @@
+body{
+    padding: 0cm;
+    margin: 0cm;
+    background-color: rgb(242, 234, 255);
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .Conteiner{
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Conteiner a{
+    text-decoration: none;
+    font-size: 50px;
+    margin: 50px;
+  }

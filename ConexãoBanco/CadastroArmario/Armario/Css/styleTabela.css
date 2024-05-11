@@ -1,0 +1,41 @@
+body{
+    padding: 0cm;
+    margin: 0cm;
+    background-color: rgb(242, 234, 255);
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .Conteiner{
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .Conteiner a{
+    text-decoration: none;
+    font-size: 20px;
+  }
+  .Conteiner table{
+    height: 10vh;
+    border: 1px solid black
+  }
+  .Conteiner th, td{
+    padding: 5px;
+    font-size: 20px;
+    border: 1px solid black;
+  }
+  .Link{
+    display: grid;
+    grid-template-areas: "l r";
+    grid-template-rows: 1fr;
+    width: 20vw;
+  }
+  .Left{
+    grid-area: l;
+    justify-self: center;
+  }
+  .Right{
+    grid-area: r;
+    justify-self: center;
+  }
