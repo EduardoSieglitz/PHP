@@ -12,7 +12,7 @@ $_SESSION['id'];
 </head>
 <body align="center">
 <div class="Conteiner">
-    <form action="./FormCadastro.php" method="post">
+    <form action="./FormEdita.php" method="post">
         <table border="1" align="center" style="border: 1px dashed black">
             <tr>
                 <th align="center" colspan="2" style="font-size: 30px;">Armário</th>
@@ -83,11 +83,19 @@ $_SESSION['id'];
       $conn = new PDO ("mysql:local=localhost;dbname=guarda_volumes354;port=3306", "root", "");
       $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
       var_dump($dados);
-      $sql = "UPDATE armarios SET setor = :setor, codigo = :codigo, tamanho = :tamanho, preco = : preco,
-       status = :status, observacao = :observacao, data = :data, fechadura = :fechadura WHERE id_armarios = :id'";
-      $Query = $conn->prepare($sql);
-      $Query->bindParam(":id", $_SESSION['id']);
-      $Query->execute();
+      $sql = "UPDATE armarios SET setor = :setor, codigo = :codigo, tamanho = :tamanho, preco = :preco,
+       status = :status, observacao = :observacao, data = :data, fechadura = :fechadura WHERE id_armarios = :id";
+      $add = $conn->prepare($sql);
+      $add->bindParam(":id", $_SESSION['id']);
+      $add ->bindParam(":setor", $dados["Setor"]);
+      $add ->bindParam(":codigo", $dados["codigo"]);
+      $add ->bindParam(":tamanho", $dados["tamanho"]);
+      $add ->bindParam(":preco", $dados["preco"]);
+      $add ->bindParam(":status", $dados["status"]);
+      $add ->bindParam(":observacao", $dados["obs"]);
+      $add ->bindParam(":data", $dados["data"]);
+      $add ->bindParam(":fechadura", $dados["fecha"]);
+      $add->execute();
       header("LOCATION: http://localhost/GitHub/PHP/Conex%c3%a3oBanco/CadastroArmario/Armario/Tabela.php");
     }
 ?>
