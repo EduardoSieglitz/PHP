@@ -1,6 +1,21 @@
-<?php 
-session_start();
-$_SESSION['id'];
+<?php
+    if(isset($_POST["btnExec"])){
+      $conn = new PDO ("mysql:local=localhost;dbname=guarda_volumes354;port=3306", "root", "");
+      $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+      $sql = "UPDATE armarios SET setor = :setor, codigo = :codigo, tamanho = :tamanho, preco = :preco,
+       status = :status, observacao = :observacao, data = :data, fechadura = :fechadura WHERE id_armarios = :id";
+      $add = $conn->prepare($sql);
+      $add->bindParam(":id", $dados['id']);
+      $add ->bindParam(":setor", $dados["Setor"]);
+      $add ->bindParam(":codigo", $dados["codigo"]);
+      $add ->bindParam(":tamanho", $dados["tamanho"]);
+      $add ->bindParam(":preco", $dados["preco"]);
+      $add ->bindParam(":status", $dados["status"]);
+      $add ->bindParam(":observacao", $dados["obs"]);
+      $add ->bindParam(":data", $dados["data"]);
+      $add ->bindParam(":fechadura", $dados["fecha"]);
+      $add->execute();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +57,7 @@ $_SESSION['id'];
           <th>$row[observacao]</th>
           <th>$row[data]</th>
           <th>$row[fechadura]</th>
-          <form action='Tabela.php' method='post'>
+          <form action='FormEdita.php' method='post'>
           <th><button type='submit' name='btEditar'>Editar</button>
           <input type='hidden' name='editar' value='$row[id_armarios]'></th>
           </form>
@@ -60,12 +75,6 @@ $_SESSION['id'];
         $Query = $conn->prepare($sql);
         $Query->bindParam(":id", $delete);
         $Query->execute();
-        header("LOCATION: http://localhost/GitHub/PHP/Conex%c3%a3oBanco/CadastroArmario/Armario/Tabela.php");
-      }
-      if(isset($_POST['btEditar'])){
-        $editar = $_POST['editar'];
-        $_SESSION['id'] = $editar;
-        header("LOCATION: http://localhost/GitHub/PHP/Conex%C3%A3oBanco/CadastroArmario/Armario/FormEdita.php");
       }
       ?>
       <div class="Link">

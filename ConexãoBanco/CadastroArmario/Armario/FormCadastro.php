@@ -86,7 +86,6 @@
     if(isset($_POST["btnExec"])){
       $conn = new PDO ("mysql:local=localhost;dbname=guarda_volumes354;port=3306", "root", "");
       $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-      var_dump($dados);
       $sql = "INSERT INTO armarios (setor, codigo, tamanho, preco, status, observacao, data, fechadura) VALUE (:setor, :codigo, :tamanha, :preco, :statusAr, :obs, :dataAr, :fecha);";
       $add = $conn->prepare($sql);
       $add ->bindParam(":setor", $dados["Setor"]);
