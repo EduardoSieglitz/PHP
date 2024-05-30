@@ -10,5 +10,6 @@ switch($_GET['option']){
 }else{
     $data['Resposta'] = "Error";
     echo "<center><h2>" . $data['Resposta'] . "</h2><hr></center>";
+    echo"Testando codigo";
 }
 ?>
