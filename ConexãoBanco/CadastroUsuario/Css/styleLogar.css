@@ -1,0 +1,57 @@
+body{
+    padding: 0cm;
+    margin: 0cm;
+    background-color: rgb(242, 234, 255);
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .Conteiner{
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .Conteiner a{
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+  }
+  .Conteiner table{
+    width: 30vw;
+    height: 50vh;
+    border: 1px solid black
+  }
+  .Conteiner th, td{
+    font-size: 25px;
+    border: 1px solid black;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+  }
+  .Conteiner input{
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 11vw;
+    height: 22px;
+  }
+  .Conteiner button{
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 12vw;
+    height: 28px;
+    background-color: aliceblue;
+  }
+  .Link{
+    display: grid;
+    grid-template-areas: "l r";
+    grid-template-rows: 1fr;
+  }
+  .Left{
+    grid-area: l;
+    justify-self: center;
+  }
+  .Right{
+    grid-area: r;
+    justify-self: center;
+  }
